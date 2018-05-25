@@ -19,7 +19,6 @@ describe MaquinaExpendedoraDeBebidas do
     expect(un_vaso.tiene_te?).to be_falsey
   end
 
-=begin
   it 'deberia hacer te con leche con 0 de azucar' do
     cantidad_azucar = 0
 
@@ -30,5 +29,5 @@ describe MaquinaExpendedoraDeBebidas do
     expect(un_vaso.tiene_azucar?).to be_falsey
     expect(un_vaso.tiene_te?).to be_truthy
   end
-=end
+
 end

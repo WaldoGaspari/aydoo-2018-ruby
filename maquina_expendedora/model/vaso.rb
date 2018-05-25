@@ -10,6 +10,10 @@ class Vaso
     @sustancia = "cafe"
   end
 
+  def cambiar_contenido_a_te
+    @sustancia = "te"
+  end
+
   def poner_leche
     @leche = "leche"
   end
