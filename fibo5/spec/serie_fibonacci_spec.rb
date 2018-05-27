@@ -25,4 +25,18 @@ describe 'SerieFibonacci' do
     expect(serieFibonacci.calcular_elemento_de_la_serie_de_fibonacci(-5)).to eq 0
   end
 
+  it 'calcular serie de Fibonacci de 5 deberia dar 01123' do
+    expect(serieFibonacci.calcular_serie(5)).to start_with(0)
+    expect(serieFibonacci.calcular_serie(5)).to end_with(3)
+  end
+
+  it 'calcular serie de Fibonacci de 1 deberia dar 0' do
+    expect(serieFibonacci.calcular_serie(1)).to start_with(0)
+    expect(serieFibonacci.calcular_serie(1)).to end_with(0)
+  end
+
+  it 'calcular serie de Fibonacci de 0 deberia dar vacio' do
+    expect(serieFibonacci.calcular_serie(0)).to eq ([ ])
+  end
+
 end
