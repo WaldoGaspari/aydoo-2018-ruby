@@ -39,4 +39,13 @@ describe 'SerieFibonacci' do
     expect(serieFibonacci.calcular_serie(0)).to eq ([ ])
   end
 
+  it 'calcular sumatoria de la serie de Fibonacci de 5 deberia dar 7' do
+    resultado = serieFibonacci.calcular_serie(5)
+    expect(serieFibonacci.calcular_sumatoria(resultado)).to eq 7
+  end
+
+  it 'calcular sumatoria de la serie de Fibonacci de 1 deberia dar 0' do
+    resultado = serieFibonacci.calcular_serie(1)
+    expect(serieFibonacci.calcular_sumatoria(resultado)).to eq 0
+  end
 end

@@ -19,4 +19,14 @@ class SerieFibonacci
     end
     return resultado
   end
+
+  def calcular_sumatoria(resultado)
+    total = 0
+    posicion = 0
+    while posicion < resultado.length do
+      total += resultado[posicion]
+      posicion +=1
+    end
+    return total
+  end
 end
