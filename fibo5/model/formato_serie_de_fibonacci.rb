@@ -19,4 +19,18 @@ class FormatoSerieDeFibonacci
     return numerosPares
   end
 
+  def calcular_numeros_impares(resultado)
+    numerosImpares = Array.new
+    posicion = 1
+    posicionImpar = 0
+    while posicion < resultado.length do
+      if (resultado[posicion] % 2 != 0)
+        numerosImpares[posicionImpar] = resultado[posicion]
+        posicionImpar +=1
+      end
+      posicion +=1
+    end
+    return numerosImpares
+  end
+
 end

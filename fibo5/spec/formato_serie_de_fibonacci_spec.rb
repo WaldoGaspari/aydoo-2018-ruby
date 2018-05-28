@@ -21,4 +21,11 @@ describe 'SerieFibonacci' do
     expect(resultado).to end_with(8)
   end
 
+  it 'calcular serie de Fibonacci de 5 obteniendo solo sus numeros impares deberia dar 113' do
+    resultado = serieFibonacci.calcular_serie(5)
+    resultado = formato.calcular_numeros_impares(resultado)
+    expect(resultado).to start_with(1)
+    expect(resultado).to end_with(3)
+  end
+
 end
