@@ -8,6 +8,14 @@ get '/fibonacci/:numero' do
   formato = FormatoSerieDeFibonacci.new
   resultado = serieFibonacci.calcular_serie(params[:numero].to_i)
 
+  if (params[:solo] != "pares" and params[:solo] != "impares" and !params[:solo].nil? and params[:solo] != " ")
+    halt 400, json({ error: "Opcion no valida"})
+  end
+
+  if (params[:sentido] != "directo" and params[:sentido] != "inverso" and !params[:sentido].nil? and params[:sentido] != " ")
+    halt 400, json({ error: "Opcion no valida"})
+  end
+
   if (params[:solo] == "pares")
     resultado = formato.calcular_numeros_pares(resultado)
   end
@@ -27,6 +35,15 @@ get '/fibonacci/:numero/lista' do
   serieFibonacci = SerieFibonacci.new
   formato = FormatoSerieDeFibonacci.new
   resultado = serieFibonacci.calcular_serie(params[:numero].to_i)
+
+  if (params[:solo] != "pares" and params[:solo] != "impares" and !params[:solo].nil? and params[:solo] != " ")
+    halt 400, json({ error: "Opcion no valida"})
+  end
+
+  if (params[:sentido] != "directo" and params[:sentido] != "inverso" and !params[:sentido].nil? and params[:sentido] != " ")
+    halt 400, json({ error: "Opcion no valida"})
+  end
+
   if (params[:solo] == "pares")
     resultado = formato.calcular_numeros_pares(resultado)
   end
