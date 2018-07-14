@@ -1,5 +1,7 @@
 require_relative '../model/dias_plazo_fijo_tradicional_exception'
 require_relative '../model/monto_plazo_fijo_tradicional_exception'
+require_relative '../model/dias_plazo_fijo_precancelable_exception'
+require_relative '../model/monto_plazo_fijo_precancelable_exception'
 
 class PlazoFijo
 
@@ -17,6 +19,14 @@ class PlazoFijo
 	end
 
 	def calcular_ganancia_de_plazo_fijo_precancelable (plazo_acordado, plazo_real, interes, monto)
+		if (plazo_real < 1 || plazo_real > plazo_acordado) 
+			DiasPlazoFijoPrecancelableException.new
+		end
+
+		if (monto < 200) 
+			MontoPlazoFijoPrecancelableException.new
+		end
+
 		resultado = ((plazo_acordado/365.00) * (interes/100.00) * monto).round(2)
 
 		if ((plazo_acordado - plazo_real) != 0)

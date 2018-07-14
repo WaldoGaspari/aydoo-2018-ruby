@@ -33,5 +33,13 @@ describe 'PlazoFijo' do
     expect(plazoFijo.calcular_ganancia_de_plazo_fijo_precancelable(365, 365, 10, 100000)).to eq 10000.00
   end
 
+  it 'calcular plazo fijo precancelable por un monto de 100000, plazo acordado 90 dias, plazo real 120 e interes 10 porciento NO deberia poder calcularlo y deberia lanzar una excepcion' do
+    expect { expect { plazoFijo.calcular_ganancia_de_plazo_fijo_precancelable(90, 120, 10, 100000) }.to raise_error ArgumentError, 'Plazo incorrecto. Debe ser mayor a 1 y menor o igual al plazo acordado.'}
+  end
+
+  it 'calcular plazo fijo precancelable por un monto de 100, plazo acordado 90 dias, plazo real 90 e interes 10 porciento NO deberia poder calcularlo y deberia lanzar una excepcion' do
+    expect { expect { plazoFijo.calcular_ganancia_de_plazo_fijo_precancelable(90, 90, 10, 100000) }.to raise_error ArgumentError, 'El monto para este tipo de plazo fijo debe ser mayor o igual a 200.'}
+  end
+
 end
 
