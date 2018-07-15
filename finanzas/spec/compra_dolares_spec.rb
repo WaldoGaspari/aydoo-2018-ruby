@@ -17,4 +17,8 @@ describe 'CompraDolares' do
     expect(compraDolares.calcular_ganancia(50000, 24, 28)).to eq 8333.33
   end
 
+  it 'calcular ganancia por la compra de dolares con un monto de 50000, cotizacion inicial 20 y final 18 deberia dar 0.00' do
+    expect(compraDolares.calcular_ganancia(50000, 20, 18)).to eq 0.00
+  end
+
 end
