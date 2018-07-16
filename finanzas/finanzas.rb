@@ -1,5 +1,6 @@
 require_relative '../finanzas/model/compra_dolares'
 require_relative '../finanzas/model/plazo_fijo'
+require_relative '../finanzas/model/calculador_de_impuesto'
 
 class Finanzas
 
@@ -8,8 +9,10 @@ class Finanzas
 	inversor = entrada_separada[1]
 	posicion = 2
 	total_ganancias = 0
+	total_impuesto = 0
 	compraDolares = CompraDolares.new
 	plazo_fijo = PlazoFijo.new
+	calculador_impuesto = CalculadorDeImpuesto.new
 	while posicion < entrada_separada.length do
 		parametros = entrada_separada[posicion].split(',')
 
@@ -28,7 +31,13 @@ class Finanzas
 		total_ganancias += resultado
 		posicion += 1
 	end
+
+	if (inversor == "ind") 
+		total_impuesto = calculador_impuesto.calcular_impuesto_para_individuo(total_ganancias)
+	else 
+		total_impuesto = calculador_impuesto.calcular_impuesto_para_empresa(total_ganancias)
+	end
 	
-	puts " ganancia: #{total_ganancias} "
+	puts " ganancia: #{total_ganancias}, impuesto: #{total_impuesto} "
 
 end
