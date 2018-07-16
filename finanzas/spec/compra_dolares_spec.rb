@@ -25,4 +25,12 @@ describe 'CompraDolares' do
     expect { expect { compraDolares.calcular_ganancia(90, 24, 25) }.to raise_error ArgumentError, 'El monto debe ser mayor o igual a 100.'}
   end
 
+  it 'calcular ganancia por la compra de dolares con un monto de 5000, cotizacion inicial 0.15 y final 25 NO deberia calcularlo y deberia lanzar una excepcion' do
+    expect { expect { compraDolares.calcular_ganancia(5000, 0.15, 25) }.to raise_error ArgumentError, 'La cotizacion inicial debe ser mayor o igual a 1.'}
+  end
+
+  it 'calcular ganancia por la compra de dolares con un monto de 5000, cotizacion inicial 20 y final 0 NO deberia calcularlo y deberia lanzar una excepcion' do
+    expect { expect { compraDolares.calcular_ganancia(5000, 20, 0) }.to raise_error ArgumentError, 'La cotizacion final debe ser mayor o igual a 1.'}
+  end
+
 end
