@@ -1,6 +1,7 @@
 require_relative '../model/dias_plazo_fijo_exception'
 require_relative '../model/monto_plazo_fijo_exception'
 require_relative '../model/dias_plazo_fijo_precancelable_exception'
+require_relative '../model/interes_plazo_fijo_exception'
 
 class PlazoFijo
 
@@ -11,6 +12,10 @@ class PlazoFijo
 
 		if (monto < 100)
 			MontoPlazoFijoException.new
+		end
+
+		if (interes < 1)
+			InteresPlazoFijoExcepcion.new
 		end
 
 		resultado = ((plazo/365.00) * (interes/100.00) * monto).round(2)
