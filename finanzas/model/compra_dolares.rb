@@ -10,11 +10,11 @@ class CompraDolares
 		end
 
 		if (cotizacion_inicial < 1)
-			CotizacionInicialExcepcion.new
+			CotizacionInicialException.new
 		end
 
 		if (cotizacion_final < 1)
-			CotizacionFinalExcepcion.new
+			CotizacionFinalException.new
 		end
 
 		if (cotizacion_final <= cotizacion_inicial) 

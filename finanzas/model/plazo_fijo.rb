@@ -15,7 +15,7 @@ class PlazoFijo
 		end
 
 		if (interes < 1)
-			InteresPlazoFijoExcepcion.new
+			InteresPlazoFijoException.new
 		end
 
 		resultado = ((plazo/365.00) * (interes/100.00) * monto).round(2)

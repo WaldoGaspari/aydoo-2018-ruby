@@ -10,14 +10,13 @@ class Finanzas
 	posicion = 2
 	total_ganancias = 0
 	total_impuesto = 0
-	compraDolares = CompraDolares.new
 	plazo_fijo = PlazoFijo.new
 	calculador_impuesto = CalculadorDeImpuesto.new
 	while posicion < entrada_separada.length do
 		parametros = entrada_separada[posicion].split(',')
 
 		if (parametros[0] == "dol")	
-			resultado = compraDolares.calcular_ganancia(parametros[1].to_i, parametros[2].to_i, parametros[3].to_i)
+			resultado = (CompraDolares.new).calcular_ganancia(parametros[1].to_i, parametros[2].to_i, parametros[3].to_i)
 		end
 
 		if (parametros[0] == "pft")
